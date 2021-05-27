@@ -17,6 +17,12 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+//no authentication
+//$router->group([], function() use ($router) {
+
+//with authentication
+$router->group(['middleware' => 'client.credentials'], function () use ($router) {
+
 //API gateway routes for SITE1 users
 $router->get('/users1', 'User1Controller@index');
 $router->post('/users1', 'User1Controller@addUser');
@@ -32,3 +38,9 @@ $router->get('/users2/{id}', 'User2Controller@show');
 $router->put('/users2/{id}', 'User2Controller@update');
 $router->patch('/users2/{id}', 'User2Controller@update');
 $router->delete('/users2/{id}', 'User2Controller@delete');
+
+});
+
+$router->group(['middleware' => 'auth:api'], function () use ($router) {
+    $router->get('/users/me', 'UserController@me');
+});
