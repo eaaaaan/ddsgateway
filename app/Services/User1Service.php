@@ -40,7 +40,7 @@ use App\Traits\ConsumesExternalService;
 
         public function obtainUsers1()
         {
-            return $this->performRequest('GET','/users1');
+            return $this->performRequest('GET','/users');
         }
 
         /**

@@ -45,7 +45,7 @@ class User2Service{
 
         public function createUser2($data)
         {
-            return $this->performRequest('POST', '/users',$data);
+            return $this->performRequest('POST', '/users2',$data);
         }
 
         /**
@@ -55,7 +55,7 @@ class User2Service{
         
         public function obtainUser2($id)
         {
-            return $this->performRequest('GET', "/users/{$id}");
+            return $this->performRequest('GET', "/users2/{$id}");
         }
 
         /**
@@ -65,7 +65,7 @@ class User2Service{
 
         public function editUser2($data, $id)
         {
-            return $this->performRequest('PUT',"/users/{$id}", $data);
+            return $this->performRequest('PUT',"/users2/{$id}", $data);
         }
 
         /**
@@ -74,6 +74,6 @@ class User2Service{
          */
         public function deleteUser2($id)
         {
-            return $this->performRequest('DELETE', "/users/{$id}");
+            return $this->performRequest('DELETE', "/users2/{$id}");
         }
 }
