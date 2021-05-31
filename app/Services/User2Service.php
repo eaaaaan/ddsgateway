@@ -40,7 +40,7 @@ class User2Service{
 
         public function obtainUsers2()
         {
-            return $this->performRequest('GET','/users');
+            return $this->performRequest('GET','/users2');
         }
 
         public function createUser2($data)
