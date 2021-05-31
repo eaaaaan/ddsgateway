@@ -20,7 +20,7 @@ $router->get('/', function () use ($router) {
 //no authentication
 //$router->group([], function() use ($router) {
 
-//with authentication
+with authentication
 $router->group(['middleware' => 'client.credentials'], function () use ($router) {
 
 //API gateway routes for SITE1 users
