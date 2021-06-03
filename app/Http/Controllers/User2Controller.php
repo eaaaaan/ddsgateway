@@ -38,6 +38,7 @@
             return $this->successResponse($this->user2Service->obtainUsers2());
         }
 
+
         public function addUser(Request $request)
         {
             return $this->successResponse($this->user2Service->createUser2($request->all(),Response::HTTP_CREATED));
